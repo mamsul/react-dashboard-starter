@@ -3,7 +3,7 @@ import { retry } from "../utils/index";
 
 export const noAuthRoute = [
   {
-    path: "/landing",
+    path: "/",
     component: lazy(() =>
       retry(() =>
         import(/* webpackChunkName: "Landing Page" */ "../pages/landing")
@@ -18,6 +18,14 @@ export const authenticatedRoute = [
     component: lazy(() =>
       retry(() =>
         import(/* webpackChunkName: "Overview" */ "../pages/overview")
+      )
+    ),
+  },
+  {
+    path: "/payments",
+    component: lazy(() =>
+      retry(() =>
+        import(/* webpackChunkName: "Payments" */ "../pages/payments")
       )
     ),
   },

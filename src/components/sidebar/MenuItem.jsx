@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 import SubmenuItem from "./SubmenuItem";
 import TextMenu from "./TextMenu";
 
 function MenuItem({ data, currentPath }) {
-  const navigate = useNavigate();
   const [showChild, setShowChild] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -25,7 +23,7 @@ function MenuItem({ data, currentPath }) {
             }`}
             onClick={() => {
               setShowChild(!showChild);
-              data.isLinked && navigate(data.path);
+              data.isLinked && window.location.assign(data.path);
             }}
           >
             <TextMenu data={data} isActive={isActive} />

@@ -12,7 +12,7 @@ const sidebarMenu = [
     title: "Payments",
     path: "/payments",
     icon: <BankNotes className="w-4 h-auto" />,
-    isLinked: false,
+    isLinked: true,
     subMenu: [
       { title: "Top Ups", path: "/payments/top-ups" },
       { title: "Payouts", path: "/payments/payouts" },

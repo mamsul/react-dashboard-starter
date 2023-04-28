@@ -2,12 +2,11 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { noAuthRoute, authenticatedRoute } from "./routes";
-import Overview from "./pages/overview";
 import Layout from "./components/layouts";
+import UnmatchPage from "./pages/UnmatchPage";
 
 function App() {
-  // const token = localStorage.getItem("token");
-  const token = "ada";
+  const token = localStorage.getItem("token");
 
   return (
     <Routes>
@@ -34,6 +33,7 @@ function App() {
           ))}
         </Route>
       )}
+      <Route path="*" element={<UnmatchPage />} />
     </Routes>
   );
 }
